@@ -5,8 +5,8 @@ import { Dimensions } from "react-native";
 import ImagePickerExample from "./ImagePickerExample"
 
 const { height, width } = Dimensions.get("window");
-const maskRowHeight = Math.round((height - height * 0.95) / 20);
-const maskColWidth = (width - width * 0.95) / 2;
+const maskRowHeight = Math.round((height - height * 0.961) / 20);
+const maskColWidth = (width - width * 0.97) / 2;
 
 export default function CameraExample() {
   const [hasPermission, setHasPermission] = useState(null);
@@ -29,17 +29,15 @@ export default function CameraExample() {
       <Camera style={styles.cameraView} type={Camera.Constants.Type.back}>
         <View style={styles.maskOutter}>
           <View
-            style={[{ flex: maskRowHeight }, styles.maskRow, styles.maskFrame]}
+            style={[{ flex: maskRowHeight }, styles.maskRow]}
           />
           <View style={[{ flex: 30 }, styles.maskCenter]}>
-            <View style={[{ width: maskColWidth }, styles.maskFrame]} />
             <View style={styles.maskInner}>
                 <ImagePickerExample></ImagePickerExample>
             </View>
-            <View style={[{ width: maskColWidth }, styles.maskFrame]} />
           </View>
           <View
-            style={[{ flex: maskRowHeight }, styles.maskRow, styles.maskFrame]}
+            style={[{ flex: maskRowHeight }, styles.maskRow]}
           />
         </View>
       </Camera>
@@ -65,13 +63,10 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   maskInner: {
-    width: 300,
+    width: '90%',
     backgroundColor: "transparent",
     borderColor: "white",
     borderWidth: 1,
-  },
-  maskFrame: {
-    backgroundColor: "rgba(1,1,1,0.6)",
   },
   maskRow: {
     width: "100%",
