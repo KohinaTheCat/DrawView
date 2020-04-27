@@ -4,7 +4,7 @@ import { Slider } from "react-native-elements";
 import * as ImagePicker from "expo-image-picker";
 import Constants from "expo-constants";
 import * as Permissions from "expo-permissions";
-import styles from "./styles/style_cam"
+import styles from "./styles/style_cam";
 
 export default class ImagePickerExample extends React.Component {
   state = {
@@ -22,13 +22,17 @@ export default class ImagePickerExample extends React.Component {
           style={styles.button}
           activeOpacity={0.7}
         >
-            <Text style = {styles.button_text}>tap to pick an image</Text>
+          <Text style={styles.button_text}>tap to pick an image</Text>
         </TouchableOpacity>
         <View
           style={{
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
+            transform: [
+                { rotateX: "45deg" },
+                { rotateZ: "45deg" }
+              ]
           }}
         >
           {image && (
@@ -51,13 +55,20 @@ export default class ImagePickerExample extends React.Component {
         >
           <Slider
             value={this.state.opa}
-            thumbStyle = {{width: 40, height: 40, backgroundColor: '#e9e1cc', borderRadius: 100}}
-            trackStyle = {{height: 40}}
-            maximumTrackTintColor='transparent'
-            minimumTrackTintColor={'#ea9085'}
+            thumbStyle={{
+              width: 40,
+              height: 40,
+              backgroundColor: "#e9e1cc",
+              borderRadius: 100,
+            }}
+            trackStyle={{ height: 40 }}
+            maximumTrackTintColor="transparent"
+            minimumTrackTintColor={"#ea9085"}
             onValueChange={(value) => this.setState({ opa: value })}
           />
-          <Text style = {styles.slider_text}>transparency: {(this.state.opa).toFixed(2)}</Text>
+          <Text style={styles.slider_text}>
+            transparency: {this.state.opa.toFixed(2)}
+          </Text>
         </View>
       </View>
     );
@@ -87,8 +98,6 @@ export default class ImagePickerExample extends React.Component {
       if (!result.cancelled) {
         this.setState({ image: result.uri });
       }
-
-      console.log(result);
     } catch (E) {
       console.log(E);
     }
