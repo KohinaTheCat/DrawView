@@ -75,6 +75,7 @@ export default class Main extends Component {
         toValue: 1,
         duration: 3000,
         easing: Easing.elastic(10),
+        useNativeDriver: true
       }),
     ]).start();
   };
@@ -104,6 +105,7 @@ export default class Main extends Component {
           </Animated.View>
 
           <TouchableOpacity
+          disabled = {this.state.done}
             style={[
               styles.button,
               { transform: [{ scaleY: this.state.height }] },
