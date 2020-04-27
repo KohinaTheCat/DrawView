@@ -3,9 +3,9 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     slider_text:{
         color: "#ffffff",
-        shadowColor: "#000000",
-        shadowOffset: {width: 1, height: 1},
-        shadowRadius: 10,
+        textShadowColor: 'rgba(0, 0, 0, 0.75)',
+        textShadowOffset: {width: -1, height: 1},
+        textShadowRadius: 1,
         fontSize: 15,
         padding: 5,
         fontFamily: "roboto"
@@ -14,6 +14,9 @@ export default StyleSheet.create({
       position: "absolute",
       color: "#ffffff",
       fontSize: 20,
+      textShadowColor: 'rgba(0, 0, 0, 0.75)',
+      textShadowOffset: {width: -1, height: 1},
+      textShadowRadius: 1,
       fontFamily: "roboto",
       padding: 10,
       opacity: 0.9,

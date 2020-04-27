@@ -26,7 +26,7 @@ export default function CameraExample() {
   }
   return (
     <View style={styles.container}>
-      <Camera style={styles.cameraView} type={Camera.Constants.Type.back}>
+      <Camera ratio = "2:1" style={[styles.cameraView, ]} type={Camera.Constants.Type.back}>
         <View style={styles.maskOutter}>
           <View
             style={[{ flex: maskRowHeight }, styles.maskRow]}
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   cameraView: {
     flex: 1,
-    justifyContent: "flex-start",
+    // justifyContent: "flex-start",
   },
   maskOutter: {
     position: "absolute",
@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     borderColor: "white",
     borderWidth: 1,
+    overflow: "visible"
   },
   maskRow: {
     width: "100%",

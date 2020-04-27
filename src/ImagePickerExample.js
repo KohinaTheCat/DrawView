@@ -29,9 +29,10 @@ export default class ImagePickerExample extends React.Component {
             flex: 1,
             alignItems: "center",
             justifyContent: "center",
+            overflow: "visible",
             transform: [
-                { rotateX: "45deg" },
-                { rotateZ: "45deg" }
+                {rotateX: "60deg"},
+                { translateY: 10 }
               ]
           }}
         >
@@ -39,7 +40,7 @@ export default class ImagePickerExample extends React.Component {
             <Image
               source={{ uri: image }}
               style={{
-                width: 500,
+                width: 350,
                 height: 500,
                 opacity: this.state.opa,
               }}
@@ -92,7 +93,7 @@ export default class ImagePickerExample extends React.Component {
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ImagePicker.MediaTypeOptions.All,
         allowsEditing: true,
-        aspect: [4, 3],
+        aspect: [8, 11],
         quality: 1,
       });
       if (!result.cancelled) {
