@@ -22,12 +22,21 @@ export default function CameraExample() {
 
   useEffect(() => {
     _subscribe();
+
+    return() =>{
+        _unsubscribe()
+    }
   }, []);
 
   const _subscribe = () => {
     this._subscription = Accelerometer.addListener((accelerometerData) => {
       setData(accelerometerData);
     });
+  };
+
+  const _unsubscribe = () => {
+    this._subscription && this._subscription.remove();
+    this._subscription = null;
   };
 
   if (hasPermission === null) {
