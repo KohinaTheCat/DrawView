@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Accelerometer } from 'expo-sensors';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {

@@ -14,6 +14,7 @@ export default class ImagePickerExample extends React.Component {
 
   render() {
     let { image } = this.state;
+    let degree = (this.props.deg * 90).toString() + "deg"
 
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -31,7 +32,7 @@ export default class ImagePickerExample extends React.Component {
             justifyContent: "center",
             overflow: "visible",
             transform: [
-                {rotateX: "60deg"},
+                {rotateX: degree},
                 { translateY: 10 }
               ]
           }}

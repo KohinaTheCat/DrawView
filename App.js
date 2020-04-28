@@ -4,6 +4,7 @@ import Main from "./src/pages/Main"
 import CameraExample from "./src/CameraExample.js"
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import Acc from './src/pages/Acc';
 
 const Stack = createStackNavigator();
 
