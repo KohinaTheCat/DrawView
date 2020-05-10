@@ -6,7 +6,7 @@ import ImagePickerExample from "./ImagePickerExample";
 import { Accelerometer } from "expo-sensors";
 
 const { height, width } = Dimensions.get("window");
-const maskRowHeight = Math.round((height - height * 0.961) / 20);
+const maskRowHeight = Math.round((height - height * 0.965) / 20);
 const maskColWidth = (width - width * 0.97) / 2;
 
 export default function CameraExample() {
